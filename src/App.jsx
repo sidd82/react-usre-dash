@@ -9,7 +9,7 @@ function App() {
       const response = await Axios.get(`https://api.one-o.in/api/auth/user`, {
         withCredentials: true,
         headers: {
-          "x-api-key": process.env.X_API_KEY,
+          "x-api-key": "Si78757875",
         },
       });
       console.log(response.data);
