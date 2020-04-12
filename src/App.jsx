@@ -49,6 +49,7 @@ function App() {
               }
             );
             console.log(response);
+            window.location.href = "https://one-o.in";
           } catch (e) {
             console.log(e.response.data);
           }
