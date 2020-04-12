@@ -31,22 +31,26 @@ function App() {
       </button>
       <button
         onClick={async () => {
-          const auth2 = window.gapi.auth2.getAuthInstance();
-          if (auth2 != null) {
-            auth2
-              .signOut()
-              .then(auth2.disconnect().then(() => console.log("Success")));
-          }
-          const response = await Axios.get(
-            `https://api.one-o.in/api/auth/user/sign-out`,
-            {
-              withCredentials: true,
-              headers: {
-                "x-api-key": process.env.X_API_KEY,
-              },
+          try {
+            const auth2 = window.gapi.auth2.getAuthInstance();
+            if (auth2 != null) {
+              auth2
+                .signOut()
+                .then(auth2.disconnect().then(() => console.log("Success")));
             }
-          );
-          console.log(response);
+            const response = await Axios.get(
+              `https://api.one-o.in/api/auth/user/sign-out`,
+              {
+                withCredentials: true,
+                headers: {
+                  "x-api-key": process.env.X_API_KEY,
+                },
+              }
+            );
+            console.log(response);
+          } catch (e) {
+            console.log(e);
+          }
         }}
       >
         Signout
