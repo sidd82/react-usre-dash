@@ -31,6 +31,7 @@ function App() {
       </button>
       <button
         onClick={async () => {
+          console.log(process.env.REACT_APP_AGOOGLE_CLIENT_ID_WEB);
           try {
             const auth2 = window.gapi.auth2.getAuthInstance();
             if (auth2 != null) {
