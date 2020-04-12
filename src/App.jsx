@@ -43,7 +43,7 @@ function App() {
               {
                 withCredentials: true,
                 headers: {
-                  "x-api-key": process.env.X_API_KEY,
+                  "x-api-key": process.env.REACT_APP_AGOOGLE_CLIENT_ID_WEB,
                 },
               }
             );
